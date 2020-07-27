@@ -47,12 +47,17 @@ for (var i = 0; i< pacientes.length; i++) {
 
     //se ambos forem true, irá efetuar o calculo do imc e colocar no html
     if (altura_valido && peso_valido) {
-        let IMC = (peso / (altura * altura))
-        console.log(IMC)
+        let IMC = imc(altura,peso)
 
         //funcao toFixed( numero de casas decimais) , limita as casas, round
-        tdIMC.textContent = IMC.toFixed(2)
+        tdIMC.textContent = IMC
     }
+}
+
+function imc(altura,peso){
+    let imc;
+    imc = (peso / (altura * altura))
+    return imc.toFixed(2)
 }
 
 //add eventListener é adicioanr algum evento, neste caso como click
